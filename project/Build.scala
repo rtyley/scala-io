@@ -1,9 +1,15 @@
 import sbt._
 import Keys._
 import scala.xml.transform._
+import sbtrelease._
+import sbtrelease.ReleasePlugin._
+import ReleaseStateTransformations._
+import xerial.sbt.Sonatype._
+import SonatypeKeys._
+import com.typesafe.sbt.pgp.PgpKeys
 
 object BuildConstants {
-  val organization = "com.github.scala-incubator.io"
+  val organization = "com.madgag"
   val version = "0.4.2"
   val armVersion = "1.3.3"
   val armScalaVersion = "2.11"
@@ -34,8 +40,8 @@ object ScalaIoBuild extends Build {
 
   val pomExtraSetting = pomExtra := (
     <scm>
-      <url>git@github.com:jesseeichar/scala-io.git</url>
-      <connection>scm:git:git@github.com:jesseeichar/scala-io.git</connection>
+      <url>git@github.com:rtyley/scala-io.git</url>
+      <connection>scm:git:git@github.com:rtyley/scala-io.git</connection>
     </scm>
     <developers>
       <developer>
@@ -70,7 +76,7 @@ object ScalaIoBuild extends Build {
     },
     libraryDependencies += "com.novocode" % "junit-interface" % "0.8" % "test->default",
     libraryDependencies += "org.scala-lang" % "scala-reflect" % BuildConstants.scalaVersion % "test"
-  )
+  ) ++ releaseSettings ++ sonatypeSettings
 
   // ----------------------- Core Project ----------------------- //
 
@@ -148,7 +154,7 @@ object ScalaIoBuild extends Build {
   lazy val Docs = config("docs") extend (Compile)
   val docsSettings = inConfig(Docs)(Defaults.configSettings) ++ Seq[Setting[_]](
       name := "scala-io-docs",
-      scalacOptions in Docs ++= Seq("-doc-title", "Scala IO"),//, "–doc-source-url", "https://raw.github.com/jesseeichar/scala-io/master/core/src/main/scala/"),
+      scalacOptions in Docs ++= Seq("-doc-title", "Scala IO"),//, "–doc-source-url", "https://raw.github.com/rtyley/scala-io/master/core/src/main/scala/"),
       resourceDirectory := new File("documentation/src/main/resources"),
       //siteDir <<= baseDirectory map { base => new File(base, "target/website") },
       siteDir := new File("/Users/jeichar/Sites/scala-io-doc/"),
