@@ -1,8 +1,7 @@
-addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "2.4.0")
+addSbtPlugin("com.github.gseitz" % "sbt-release" % "1.0.6")
 
-addSbtPlugin("com.typesafe.sbt" % "sbt-pgp" % "0.8.3")
+addSbtPlugin("org.xerial.sbt" % "sbt-sonatype" % "2.0")
 
-// resolvers += "sbt-idea-repo" at "http://mpeltonen.github.com/maven/"
+addSbtPlugin("com.jsuereth" % "sbt-pgp" % "1.1.0-M1")
 
-// addSbtPlugin("com.github.mpeltonen" % "sbt-idea" % "1.0.0") 
-
+addSbtPlugin("org.tpolecat" % "tut-plugin" % "0.5.3")
