@@ -19,7 +19,7 @@ object JavaConverters {
   /**
    * Wrap an arbitrary object as and AsInput object allowing the object to be converted to an Input object.
    *
-   * The possible types of src are the subclasses of [[scalax.io.AsInputConverter]]
+   * The possible types of src are the subclasses of [[scalax.io.JavaConverters.AsInputConverter]]
    */
   implicit def asInputConverter[B](src:B)(implicit converter:AsInputConverter[B]) =
     new AsInput(converter.toInput(src))
@@ -34,7 +34,7 @@ object JavaConverters {
   }
 
   /**
-   * contains several implementations of [[scalax.io.AsInputConverter]].  They will be implicitly resolved allowing
+   * contains several implementations of [[scalax.io.JavaConverters.AsInputConverter]].  They will be implicitly resolved allowing
    * a user of the library to simple call A.asInput and the converter will be found without the user needing to look up these classes
    */
   object AsInputConverter {
@@ -138,7 +138,7 @@ object JavaConverters {
   /**
    * Wrap an arbitrary object as and AsOutput object allowing the object to be converted to an Output object.
    *
-   * The possible types of src are the subclasses of [[scalax.io.AsOutputConverter]]
+   * The possible types of src are the subclasses of [[scalax.io.JavaConverters.AsOutputConverter]]
    */
   implicit def asOutputConverter[B](src:B)(implicit converter:AsOutputConverter[B]) =
     new AsOutput(converter.toOutput(src))
@@ -153,7 +153,7 @@ object JavaConverters {
   }
 
   /**
-   * contains several implementations of [[scalax.io.AsOutputConverter]].  They will be implicitly resolved allowing
+   * contains several implementations of [[scalax.io.JavaConverters.AsOutputConverter]].  They will be implicitly resolved allowing
    * a user of the library to simple call A.asOutput and the converter will be found without the user needing to look up these classes
    */
   object AsOutputConverter {
@@ -187,7 +187,7 @@ object JavaConverters {
   /**
    * Wrap an arbitrary object as and AsReadChars object allowing the object to be converted to an ReadChars object.
    *
-   * The possible types of src are the subclasses of [[scalax.io.AsReadCharsConverterFromBinary]]
+   * The possible types of src are the subclasses of [[scalax.io.JavaConverters.AsBinaryReadCharsConverter]]
    */
   implicit def asReadCharsConverter[B](src:B)(implicit converter:AsBinaryReadCharsConverter[B]) =
     new AsBinaryReadChars(codec => converter.toReadChars(src,codec))
@@ -203,7 +203,7 @@ object JavaConverters {
   }
 
   /**
-   * contains several implementations of [[scalax.io.AsReadCharsConverterFromBinary]].  They will be implicitly resolved allowing
+   * contains several implementations of [[scalax.io.JavaConverters.AsBinaryReadCharsConverter]].  They will be implicitly resolved allowing
    * a user of the library to simple call A.asBinaryReadChars and the converter will be found without the user needing to look up these classes
    */
   object AsBinaryReadCharsConverter {
@@ -237,7 +237,7 @@ object JavaConverters {
   /**
    * Wrap an arbitrary object as and AsReadChars object allowing the object to be converted to an ReadChars object.
    *
-   * The possible types of src are the subclasses of [[scalax.io.AsReadCharsConverter]]
+   * The possible types of src are the subclasses of [[scalax.io.JavaConverters.AsReadCharsConverter]]
    */
   implicit def asReadCharsConverter[B](src:B)(implicit converter:AsReadCharsConverter[B]) =
     new AsReadChars(converter.toReadChars(src))
@@ -253,7 +253,7 @@ object JavaConverters {
   }
 
   /**
-   * contains several implementations of [[scalax.io.AsReadCharsConverter]].  They will be implicitly resolved allowing
+   * contains several implementations of [[scalax.io.JavaConverters.AsReadCharsConverter]].  They will be implicitly resolved allowing
    * a user of the library to simple call A.asReadChars and the converter will be found without the user needing to look up these classes
    */
   object AsReadCharsConverter{
@@ -292,7 +292,7 @@ object JavaConverters {
   /**
    * Wrap an arbitrary object as and AsSeekable object allowing the object to be converted to an Seekable object.
    *
-   * The possible types of src are the subclasses of [[scalax.io.AsSeekableConverter]]
+   * The possible types of src are the subclasses of [[scalax.io.JavaConverters.AsSeekableConverter]]
    */
   implicit def asSeekableConverter[B](src:B)(implicit converter:AsSeekableConverter[B]) =
     new AsSeekable(converter.toSeekable(src))
@@ -308,7 +308,7 @@ object JavaConverters {
   }
 
   /**
-   * contains several implementations of [[scalax.io.AsSeekableConverter]].  They will be implicitly resolved allowing
+   * contains several implementations of [[scalax.io.JavaConverters.AsSeekableConverter]].  They will be implicitly resolved allowing
    * a user of the library to simple call A.asSeekable and the converter will be found without the user needing to look up these classes
    */
   object AsSeekableConverter {
@@ -347,7 +347,7 @@ object JavaConverters {
   /**
    * Wrap an arbitrary object as and AsWriteChars object allowing the object to be converted to an WriteChars object.
    *
-   * The possible types of src are the subclasses of [[scalax.io.AsWriteCharsConverter]]
+   * The possible types of src are the subclasses of [[scalax.io.JavaConverters.AsWriteCharsConverter]]
    */
   implicit def asWriteCharsConverter[B](src:B)(implicit converter:AsBinaryWriteCharsConverter[B]) =
     new AsBinaryWriteChars(codec => converter.toWriteChars(src,codec))
@@ -362,7 +362,7 @@ object JavaConverters {
   }
 
   /**
-   * contains several implementations of [[scalax.io.AsWriteCharsConverter]].  They will be implicitly resolved allowing
+   * contains several implementations of [[scalax.io.JavaConverters.AsWriteCharsConverter]].  They will be implicitly resolved allowing
    * a user of the library to simple call A.asWriteChars and the converter will be found without the user needing to look up these classes
    */
   object AsBinaryWriteCharsConverter {
@@ -390,7 +390,7 @@ object JavaConverters {
   /**
    * Wrap an arbitrary object as and AsWriteChars object allowing the object to be converted to an WriteChars object.
    *
-   * The possible types of src are the subclasses of [[scalax.io.AsWriteCharsConverter]]
+   * The possible types of src are the subclasses of [[scalax.io.JavaConverters.AsWriteCharsConverter]]
    */
   implicit def asWriteCharsConverter[B](src:B)(implicit converter:AsWriteCharsConverter[B]) =
     new AsWriteChars(converter.toWriteChars(src))
@@ -405,7 +405,7 @@ object JavaConverters {
   }
 
   /**
-   * contains several implementations of [[scalax.io.AsWriteCharsConverter]].  They will be implicitly resolved allowing
+   * contains several implementations of [[scalax.io.JavaConverters.AsWriteCharsConverter]].  They will be implicitly resolved allowing
    * a user of the library to simple call A.asWriteChars and the converter will be found without the user needing to look up these classes
    */
   object AsWriteCharsConverter {
@@ -427,7 +427,7 @@ object JavaConverters {
   /**
    * Wrap an arbitrary object as an AsInput object allowing the object to be converted to an Input object.
    *
-   * The possible types of src are the subclasses of [[scalax.io.AsInputConverter]]
+   * The possible types of src are the subclasses of [[scalax.io.JavaConverters.AsInputConverter]]
    */
   implicit def asUnmanagedInputConverter[B](src:B)(implicit converter:AsUnmanagedInputConverter[B]) =
     new AsUnmanagedInput(converter.toUnmanagedInput(src))
@@ -442,7 +442,7 @@ object JavaConverters {
   }
 
   /**
-   * contains several implementations of [[scalax.io.AsInputConverter]].  They will be implicitly resolved allowing
+   * contains several implementations of [[scalax.io.JavaConverters.AsInputConverter]].  They will be implicitly resolved allowing
    * a user of the library to simple call A.asInput and the converter will be found without the user needing to look up these classes
    */
   object AsUnmanagedInputConverter {
@@ -467,7 +467,7 @@ object JavaConverters {
   /**
    * Wrap an arbitrary object as and AsOutput object allowing the object to be converted to an Output object.
    *
-   * The possible types of src are the subclasses of [[scalax.io.AsOutputConverter]]
+   * The possible types of src are the subclasses of [[scalax.io.JavaConverters.AsOutputConverter]]
    */
   implicit def asOutputUnmanagedConverter[B](src:B)(implicit converter:AsUnmanagedOutputConverter[B]) =
     new AsUnmanagedOutput(converter.toUnmanagedOutput(src))
@@ -482,7 +482,7 @@ object JavaConverters {
   }
 
   /**
-   * contains several implementations of [[scalax.io.AsOutputConverter]].  They will be implicitly resolved allowing
+   * contains several implementations of [[scalax.io.JavaConverters.AsOutputConverter]].  They will be implicitly resolved allowing
    * a user of the library to simple call A.asOutput and the converter will be found without the user needing to look up these classes
    */
   object AsUnmanagedOutputConverter {
@@ -508,7 +508,7 @@ object JavaConverters {
   /**
    * Wrap an arbitrary object as and AsReadChars object allowing the object to be converted to an ReadChars object.
    *
-   * The possible types of src are the subclasses of [[scalax.io.AsReadCharsConverterFromBinary]]
+   * The possible types of src are the subclasses of [[scalax.io.JavaConverters.AsBinaryReadCharsConverter]]
    */
   implicit def asUnmanagedReadCharsConverter[B](src:B)(implicit converter:AsUnmanagedBinaryReadCharsConverter[B]) =
     new AsUnmanagedBinaryReadChars(codec => converter.toUnmanagedReadChars(src,codec))
@@ -524,7 +524,7 @@ object JavaConverters {
   }
 
   /**
-   * contains several implementations of [[scalax.io.AsReadCharsConverterFromBinary]].  They will be implicitly resolved allowing
+   * contains several implementations of [[scalax.io.JavaConverters.AsBinaryReadCharsConverter]].  They will be implicitly resolved allowing
    * a user of the library to simple call A.asBinaryReadChars and the converter will be found without the user needing to look up these classes
    */
   object AsUnmanagedBinaryReadCharsConverter {
@@ -545,7 +545,7 @@ object JavaConverters {
   /**
    * Wrap an arbitrary object as and AsReadChars object allowing the object to be converted to an ReadChars object.
    *
-   * The possible types of src are the subclasses of [[scalax.io.AsReadCharsConverter]]
+   * The possible types of src are the subclasses of [[scalax.io.JavaConverters.AsReadCharsConverter]]
    */
   implicit def asUnmanagedReadCharsConverter[B](src:B)(implicit converter:AsUnmanagedReadCharsConverter[B]) =
     new AsUnmanagedReadChars(converter.toUnmanagedReadChars(src))
@@ -561,7 +561,7 @@ object JavaConverters {
   }
 
   /**
-   * contains several implementations of [[scalax.io.AsReadCharsConverter]].  They will be implicitly resolved allowing
+   * contains several implementations of [[scalax.io.JavaConverters.AsReadCharsConverter]].  They will be implicitly resolved allowing
    * a user of the library to simple call A.asReadChars and the converter will be found without the user needing to look up these classes
    */
   object AsUnmanagedReadCharsConverter{
@@ -582,7 +582,7 @@ object JavaConverters {
   /**
    * Wrap an arbitrary object as and AsWriteChars object allowing the object to be converted to an WriteChars object.
    *
-   * The possible types of src are the subclasses of [[scalax.io.AsWriteCharsConverter]]
+   * The possible types of src are the subclasses of [[scalax.io.JavaConverters.AsWriteCharsConverter]]
    */
   implicit def asUnmanagedWriteCharsConverter[B](src:B)(implicit converter:AsUnmanagedBinaryWriteCharsConverter[B]) =
     new AsUnmanagedBinaryWriteChars(codec => converter.toUnmanagedWriteChars(src,codec))
@@ -597,7 +597,7 @@ object JavaConverters {
   }
 
   /**
-   * contains several implementations of [[scalax.io.AsWriteCharsConverter]].  They will be implicitly resolved allowing
+   * contains several implementations of [[scalax.io.JavaConverters.AsWriteCharsConverter]].  They will be implicitly resolved allowing
    * a user of the library to simple call A.asWriteChars and the converter will be found without the user needing to look up these classes
    */
   object AsUnmanagedBinaryWriteCharsConverter {
@@ -617,7 +617,7 @@ object JavaConverters {
   /**
    * Wrap an arbitrary object as and AsWriteChars object allowing the object to be converted to an WriteChars object.
    *
-   * The possible types of src are the subclasses of [[scalax.io.AsWriteCharsConverter]]
+   * The possible types of src are the subclasses of [[scalax.io.JavaConverters.AsWriteCharsConverter]]
    */
   implicit def asUnmanagedWriteCharsConverter[B](src:B)(implicit converter:AsUnmanagedWriteCharsConverter[B]) =
     new AsUnmanagedWriteChars(converter.toUnmanagedWriteChars(src))
@@ -632,7 +632,7 @@ object JavaConverters {
   }
 
   /**
-   * contains several implementations of [[scalax.io.AsWriteCharsConverter]].  They will be implicitly resolved allowing
+   * contains several implementations of [[scalax.io.JavaConverters.AsWriteCharsConverter]].  They will be implicitly resolved allowing
    * a user of the library to simple call A.asWriteChars and the converter will be found without the user needing to look up these classes
    */
   object AsUnmanagedWriteCharsConverter {
