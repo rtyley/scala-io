@@ -13,6 +13,7 @@ Default behaviour with the parameter defaults.  Autodetect ending assuming one o
 ```tut:silent
 import scalax.io._
 import JavaConverters._
+
 val text = "gaf\ngif\ngom\nfoo**bar**baz**".asReadChars
 ```
 
