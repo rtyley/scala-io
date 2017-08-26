@@ -7,7 +7,7 @@ lazy val commonSettings = Seq(
 )
 
 
-lazy val coreProj = (project in file("core")).settings(
+lazy val coreProj = (project in file("core")).enablePlugins(TutPlugin).settings(
   commonSettings,
   libraryDependencies += "com.jsuereth" %% "scala-arm" % "2.0"
 )
