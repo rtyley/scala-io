@@ -1,7 +1,8 @@
 package scalaio.test
 
 import org.junit.Assert._
-import org.junit.Test
+import org.junit.{Ignore, Test}
+
 import scalax.io.JavaConverters._
 import scalax.io._
 import scalax.test.sugar._
@@ -380,7 +381,7 @@ class LongTraversableTest extends DataIndependentLongTraversableTest[Int] with P
     }
   }
   
-  @Test
+  @Ignore @Test
   def async_methods_perform_same_functionality_as_normal_method {
     val input = independentTraversable
     def assertSameBehaviour[A](f: LongTraversable[Int] => A, f2:AsyncLongTraversable[Int] => Future[A]) {
