@@ -21,7 +21,7 @@ import scalax.io.Input
 
 /**
  * The object for constructing Path objects and for containing implicits from strings and
- * {@link java.file.File}s to Scala paths.
+ * {@link java.io.File}s to Scala paths.
  * <p> All Paths constructed by this factory are created for the default filesystem</p>
  *
  *  @author Jesse Eichar
