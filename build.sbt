@@ -34,8 +34,6 @@ lazy val fileProj = Project("scala-io-file",file("file"))
 
 releaseCrossBuild in ThisBuild := true // true if you cross-build the project for multiple Scala versions
 
-releasePublishArtifactsAction in ThisBuild := PgpKeys.publishSigned.value // Use publishSigned in publishArtifacts step
-
 releaseProcess := Seq[ReleaseStep](
   checkSnapshotDependencies,
   inquireVersions,
@@ -44,7 +42,7 @@ releaseProcess := Seq[ReleaseStep](
   setReleaseVersion,
   commitReleaseVersion,
   tagRelease,
-  publishArtifacts,
+  releaseStepCommand("publishSigned"),
   setNextVersion,
   commitNextVersion,
   releaseStepCommand("sonatypeReleaseAll"),
